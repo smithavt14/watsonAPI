@@ -12,6 +12,7 @@ var visualRecognition = new VisualRecognitionV3({
 
 // Methods
 var download = (uri, filename, callback) => {
+	console.log(uri)
 	request.head(uri, function(err, res, body) {
 		console.log('content-type:', res.headers['content-type']);
     	console.log('content-length:', res.headers['content-length']);
@@ -34,6 +35,7 @@ var classify = img => {
 			if (err) { 
 				console.log(err);
 			} else {
+				console.log(JSON.stringify(res, null, 2))
 				resolve(JSON.stringify(res, null, 2))
 			}
 		})
@@ -44,7 +46,8 @@ var classify = img => {
 app.listen(port)
 
 app.post('/upload', (req, res) => {
-	var uri = req.query.imgUrl
+	var uri = req.query.imgPath
+	console.log(uri)
 	var fileName = 'imgFile'
 
 	download(uri, fileName, function() {
