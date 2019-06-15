@@ -1,0 +1,4 @@
+applications:
+- name: watson-trash-recognition
+  random-route: true
+  memory: 128M
