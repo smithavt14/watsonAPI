@@ -16,5 +16,9 @@
     "express": "^4.17.1",
     "request": "^2.88.0",
     "watson-developer-cloud": "^4.0.1"
+  }, 
+  "engines": {
+    "node": "0.12.7",
+    "npm": "2.7.4"
   }
 }

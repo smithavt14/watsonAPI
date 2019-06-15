@@ -1,4 +1,6 @@
 applications:
 - name: watson-trash-recognition
+  command: server.js
+  buildpack: https://github.com/cloudfoundry/nodejs-buildpack
   random-route: true
   memory: 128M
